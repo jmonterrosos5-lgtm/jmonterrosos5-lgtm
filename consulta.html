@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Consulta de inquilinos</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+<header>
+  <nav>
+    <div class="brand">Alamedas de Santa Ana</div>
+    <ul>
+      <li><a href="inicio.html">Inicio</a></li>
+      <li><a href="calendario.html">Calendario</a></li>
+      <li><a href="consulta.html">Consulta de inquilinos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="main">
+  <section class="card">
+    <h2>Consulta de estado de pago</h2>
+    <form id="frmConsulta" novalidate>
+      <div class="row">
+        <div>
+          <label for="dpi">DPI (13 dígitos)</label>
+          <input id="dpi" class="input" maxlength="13" inputmode="numeric" required />
+        </div>
+        <div>
+          <label for="casa">Número de Casa</label>
+          <input id="casa" class="input" inputmode="numeric" required />
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label for="nombre">Primer Nombre</label>
+          <input id="nombre" class="input" required />
+        </div>
+        <div>
+          <label for="apellido">Primer Apellido</label>
+          <input id="apellido" class="input" required />
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label for="nac">Fecha de Nacimiento</label>
+          <input id="nac" type="date" class="date" required />
+        </div>
+        <div style="align-self: end;">
+          <button class="btn" type="submit">Consultar</button>
+        </div>
+      </div>
+      <div id="msg" class="msg" hidden></div>
+    </form>
+  </section>
+
+  <section class="card">
+    <h3>Historial de pagos</h3>
+    <form id="frmHistorial" class="row">
+      <div>
+        <label for="desde">Desde</label>
+        <input id="desde" type="date" class="date" required />
+      </div>
+      <div>
+        <label for="hasta">Hasta</label>
+        <input id="hasta" type="date" class="date" required />
+      </div>
+      <div style="grid-column: 1 / -1;">
+        <button class="btn" type="submit">Consultar historial</button>
+      </div>
+    </form>
+    <div id="tablaHistorial" class="list" style="margin-top:12px;"></div>
+  </section>
+</main>
+
+<footer>© Residencial Alamedas de Santa Ana</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.2/sql-wasm.js" defer></script>
+<script type="module" src="js/consulta.js"></script>
+</body>
+</html>

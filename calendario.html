@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calendario de actividades</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+<header>
+  <nav>
+    <div class="brand">Alamedas de Santa Ana</div>
+    <ul>
+      <li><a href="inicio.html">Inicio</a></li>
+      <li><a href="calendario.html">Calendario</a></li>
+      <li><a href="consulta.html">Consulta de inquilinos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="main">
+  <section class="card">
+    <h2>Calendario de actividades</h2>
+    <div class="row">
+      <div>
+        <label for="selMes">Mes</label>
+        <select id="selMes" class="select" aria-label="Seleccionar mes"></select>
+      </div>
+      <div>
+        <label for="selAnio">Año</label>
+        <select id="selAnio" class="select" aria-label="Seleccionar año"></select>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="calendar" id="calendar"></div>
+  </section>
+
+  <section class="card" id="detalle" hidden>
+    <h3 id="detalle-titulo"></h3>
+    <p id="detalle-desc"></p>
+  </section>
+</main>
+
+<footer>© Residencial Alamedas de Santa Ana</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.2/sql-wasm.js" defer></script>
+<script type="module" src="js/calendario.js"></script>
+</body>
+</html>
